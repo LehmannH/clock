@@ -2,7 +2,7 @@
 App::uses('AppController', 'Controller');
 /**
  * Created by PhpStorm.
- * User: LehmannH & Maschke
+ * User: LehmannH & Maschke -
  * Date: 25.06.14
  * Time: 13:55
  */
