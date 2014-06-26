@@ -13,7 +13,8 @@ class ClocksController extends AppController {
     //public $layout = 'default';
 
     public function index() {
-    $timestamp = time();
+        //$timestamp = time();
+
 
 
 
