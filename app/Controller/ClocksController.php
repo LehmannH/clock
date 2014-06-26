@@ -8,18 +8,18 @@ App::uses('AppController', 'Controller');
  */
 class ClocksController extends AppController {
 
-    public $helpers = array('Html', 'Form');
+    public $helpers = array('Html', 'Form', 'Js' => array('Jquery'));
     public $components = array('RequestHandler');
     //public $layout = 'default';
+
 
     public function index() {
         //$timestamp = time();
 
 
-
-
         }
     }
+
 
 
 
