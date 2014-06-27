@@ -1,6 +1,4 @@
 <head>
-
-
 </head>
 <body onload="window.setTimeout('ZeitAnzeigen()', 1000)">
 
@@ -15,7 +13,7 @@
     <?php echo $this->Html->script('jquery-1.11.1'); // Include jQuery library ?>
     <?php echo $this->Form->create('Clock'); ?>
     <fieldset>
-        <legend><?php echo __('Gehaltsangabe'); ?></legend>
+        <legend><?php echo __('Gehaltsangabe.'); ?></legend>
 
         <?php
         echo $this->Form->input('gehalt');
