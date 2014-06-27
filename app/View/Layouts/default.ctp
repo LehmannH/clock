@@ -21,6 +21,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <!DOCTYPE html>
 <html>
 <head>
+    <?php echo $this->Html->script('jquery-1.11.1'); // Include jQuery library
+
+    echo $this->Js->writeBuffer(array('onDomReady' => false));
+
+    ?>
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription ?>:

@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
  */
 class ClocksController extends AppController {
 
-    public $helpers = array('Html', 'Form', 'Js' => array('Jquery'));
+    public $helpers = array('Html', 'Form', 'Js' => array('jquery-1.11.1'));
     public $components = array('RequestHandler');
     //public $layout = 'default';
 
