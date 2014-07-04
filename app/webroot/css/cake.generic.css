@@ -740,3 +740,5 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+#Uhr { position:relative; top:10px; left:10px; }
+.Uhr { font-family:Arial; font-size:24px; color:black;border: 1px solid #bbb }
