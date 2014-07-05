@@ -16,6 +16,12 @@ class ClocksController extends AppController {
 
     public function index() {
         //$timestamp = time();
+        if ($this->request->is('post')) {
+            $number = $this->request->data['Clock']['gehalt'];
+            $number = $number/3600;
+            var_dump($number);
+           // return $this->redirect(array('action' => 'result', 'id' => $id));
+        }
 
 
         if($this->request->is('post')){
