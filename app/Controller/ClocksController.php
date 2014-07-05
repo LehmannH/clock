@@ -26,7 +26,7 @@ class ClocksController extends AppController {
 
         if($this->request->is('post')){
             $lohn = $this->request->data['Clock']['gehalt'];
-            $lohnps = ($lohn / 3600);
+
 
 
             $this->set('gehalt', $lohnps);

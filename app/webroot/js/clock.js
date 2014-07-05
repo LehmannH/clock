@@ -43,19 +43,44 @@ function getinhalt () {
 }
 
 var count=0;
+var Mingeh=0;
+var Stdgeh=0;
 function ZeitAnzeige () {
-    //count+=1;
+
+    Vorstd = (Stdgeh < 10) ? "0" : "";
+    Vormin = (Mingeh < 10) ? ":0" : ":";
+    Vorsek = (count < 10) ? ":0" : ":";
+
+    Geldzeit = Vorstd + Stdgeh + Vormin + Mingeh + Vorsek + count;
     Gehaltehalt = document.getElementById("ClockGehalt").value;
     sekgeh = Gehaltehalt / 2592000;
+
+
+    stdgeh = Gehaltehalt / 2592000;
+
+    if(count < 100){
     count+=sekgeh;
-    //alert('count');
+    }
+    if(count > 100)
+    {
+        count=count-100;
+        Mingeh+=1;
+
+    }
+    if(Mingeh > 100)
+    {
+        count=count-100;
+        Mingeh=Mingeh-100;
+        Stdgeh+=1;
+    }
+      //alert('count');
 
 
     if (DHTML) {
         if (NS4) {
-            setContent("id", "UhrG", null, '<span class="UhrG">' + count + "<\/span>");
+            setContent("id", "UhrG", null, '<span class="UhrG">' + Geldzeit + "<\/span>");
         } else {
-            setContent("id", "UhrG", null, count);
+            setContent("id", "UhrG", null, Geldzeit);
         }
         window.setTimeout("ZeitAnzeige()", 1000);
     }
