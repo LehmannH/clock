@@ -48,16 +48,17 @@ var Stdgeh=0;
 function ZeitAnzeige () {
 
     Vorstd = (Stdgeh < 10) ? "0" : "";
-    Vormin = (Mingeh < 10) ? ":0" : ":";
-    Vorsek = (count < 10) ? ":0" : ":";
+    Vormin = (Mingeh < 100) ? " €  " : "€";
+    Vorsek = (count < 100) ? " Cent" : "Cent";
 
-    Geldzeit = Vorstd + Stdgeh + Vormin + Mingeh + Vorsek + count;
+    // hier wird auf 7 Stellen nach dem Komma gerundet. Zum ändern einfach jeweils eine Null wegnehmen
+    Geldzeit = (Math.round(count* 10000000) / 10000000) + Vorsek;
+    //Nimmt den Wert aus dem Eingabe Feld der View und weist ihn Gehaltehalt zu
     Gehaltehalt = document.getElementById("ClockGehalt").value;
+    // Eingelesener Wert wird durch die Monatlichen Sekunden geteilt
     sekgeh = Gehaltehalt / 2592000;
 
-
-    stdgeh = Gehaltehalt / 2592000;
-
+    // Wenn der Zähler noch keine 100 Cent gezählt hat
     if(count < 100){
     count+=sekgeh;
     }
@@ -65,7 +66,10 @@ function ZeitAnzeige () {
     {
         count=count-100;
         Mingeh+=1;
-
+        Geldzeit = Mingeh + Vormin + (Math.round(count* 10000000) / 10000000) + Vorsek;
+    }
+    if(count > 100 & Mingeh > 0){
+        Geldzeit = Mingeh + Vormin + (Math.round(count* 10000000) / 10000000) + Vorsek;
     }
     if(Mingeh > 100)
     {
